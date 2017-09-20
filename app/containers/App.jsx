@@ -53,8 +53,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(wpr_object);
-
     return (
       <BrowserRouter basename={wpr_object.gdrscholars_base_url}>
         <div className="App">
