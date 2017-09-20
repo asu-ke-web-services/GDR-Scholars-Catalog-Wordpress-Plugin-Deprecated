@@ -1,11 +1,11 @@
 {
   "name": "gdr-scholars-catalog-frontend",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "A React frontend application for the GDR Scholars Catalog",
-  "homepage": "https://schoolofsustainability.asu.edu/degrees-and-programs/graduate-degrees-programs/usaid-ri-fellowships/catalog",
+  "homepage": "https://github.com/gios-asu/GDR-Scholars-Catalog-Wordpress-Plugin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gios-asu/GDR-Scholars-Catalog-Frontend.git"
+    "url": "git+https://github.com/gios-asu/GDR-Scholars-Catalog-Wordpress-Plugin.git"
   },
   "author": "Nathan Rollins <nathan.rollins@asu.edu>",
   "license": "GPL-3.0",
@@ -18,7 +18,7 @@
     "reactjs"
   ],
   "bugs": {
-    "url": "https://github.com/gopangolin/wp-reactivate/issues"
+    "url": "https://github.com/gios-asu/GDR-Scholars-Catalog-Wordpress-Plugin/issues"
   },
   "main": "index.js",
   "scripts": {
