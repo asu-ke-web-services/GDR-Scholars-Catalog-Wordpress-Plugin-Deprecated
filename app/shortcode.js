@@ -4,8 +4,8 @@ if (! window._babelPolyfill) {
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Shortcode from './containers/Shortcode.jsx';
+import App from "./containers/App";
 
 document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(<Shortcode />, document.getElementById('wp-reactivate-shortcode'));
+  ReactDOM.render(React.createElement(App), document.getElementById('gdr-catalog-shortcode'));
 });
