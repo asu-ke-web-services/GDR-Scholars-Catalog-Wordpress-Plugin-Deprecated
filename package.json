@@ -1,29 +1,31 @@
 {
-  "name": "wp-reactivate",
-  "version": "0.8.0",
-  "description": "React boilerplate for WordPress plugins",
+  "name": "gdr-scholars-catalog-frontend",
+  "version": "1.0.0",
+  "description": "A React frontend application for the GDR Scholars Catalog",
+  "homepage": "https://schoolofsustainability.asu.edu/degrees-and-programs/graduate-degrees-programs/usaid-ri-fellowships/catalog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gios-asu/GDR-Scholars-Catalog-Frontend.git"
+  },
+  "author": "Nathan Rollins <nathan.rollins@asu.edu>",
+  "license": "GPL-3.0",
+  "keywords": [
+    "arizona state university",
+    "usaid",
+    "fellowships",
+    "sustainability",
+    "wordpress",
+    "reactjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/gopangolin/wp-reactivate/issues"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack --progress --colors -p --config webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gopangolin/wp-reactivate.git"
-  },
-  "keywords": [
-    "wordpress",
-    "react",
-    "plugin",
-    "webpack"
-  ],
-  "author": "Pangolin",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/gopangolin/wp-reactivate/issues"
-  },
-  "homepage": "https://github.com/gopangolin/wp-reactivate#readme",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "isomorphic-fetch": "^2.2.1",
