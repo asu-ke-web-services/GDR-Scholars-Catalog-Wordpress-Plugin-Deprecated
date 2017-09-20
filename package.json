@@ -1,6 +1,6 @@
 {
   "name": "gdr-scholars-catalog-frontend",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "A React frontend application for the GDR Scholars Catalog",
   "homepage": "https://github.com/gios-asu/GDR-Scholars-Catalog-Wordpress-Plugin",
   "repository": {

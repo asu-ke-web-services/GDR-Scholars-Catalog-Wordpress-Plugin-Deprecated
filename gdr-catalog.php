@@ -13,7 +13,7 @@
  * Plugin Name:       GDR-Scholars-Catalog
  * Plugin URI:        https://sustainability.asu.edu
  * Description:       WP plugin to deploy the ReactJS application for the GDR Catalog
- * Version:           0.1.2
+ * Version:           1.0.0
  * Author:            Julie Ann Wrigley Global Institute of Sustainability
  * Author URI:        https://sustainability.asu.edu
  * Text Domain:       gdrscholars-catalog
@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'GDR_CATALOG_VERSION', '0.1.2' );
+define( 'GDR_CATALOG_VERSION', '1.0.0' );
 
 // Load custom settings for application
 require_once( plugin_dir_path( __FILE__ ) . 'localsettings.php' );
