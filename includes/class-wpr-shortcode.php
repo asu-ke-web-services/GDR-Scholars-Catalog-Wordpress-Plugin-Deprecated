@@ -53,7 +53,7 @@ class WPReactivate_Shortcode {
 		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->version = $plugin->get_plugin_version();
 
-		add_shortcode( 'wp-reactivate', array( $this, 'shortcode' ) );
+		add_shortcode( 'gdr-catalog', array( $this, 'shortcode' ) );
 	}
 
 
@@ -81,14 +81,16 @@ class WPReactivate_Shortcode {
 		wp_enqueue_style( $this->plugin_slug . '-shortcode-style' );
 
 		$object = shortcode_atts( array(
-			'title'       => 'Hello world',
-			'api_nonce'   => wp_create_nonce( 'wp_rest' ),
-			'api_url'	  => site_url( '/wp-json/wp-reactivate/v1/' ),
-		), $atts, 'wp-reactivate' );
+			'gdrscholars_api_url' => 'https://gdrscholars.api.dev.gios.asu.edu/api/v1',
+			// 'gdrscholars_base_url' => '/degrees-and-programs/graduate-degrees-programs/usaid-ri-fellowships/catalog/',
+			'gdrscholars_base_url' => '/graduate-degrees-programs/usaid-ri-fellowships/catalog/',
+			// 'api_nonce'   => wp_create_nonce( 'wp_rest' ),
+			// 'api_url'	  => site_url( '/wp-json/gdr-catalog/v1/' ),
+		), $atts, 'gdr-catalog' );
 
 		wp_localize_script( $this->plugin_slug . '-shortcode-script', 'wpr_object', $object );
 
-		$shortcode = "<div id='wp-reactivate-shortcode'></div>";
+		$shortcode = "<div id='gdr-catalog-shortcode'></div>";
 		return $shortcode;
 	}
 }

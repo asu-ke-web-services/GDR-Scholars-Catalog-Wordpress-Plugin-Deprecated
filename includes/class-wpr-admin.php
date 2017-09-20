@@ -131,8 +131,8 @@ class WPReactivate_Admin {
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->version );
 
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'wpr_object', array(
-				'api_nonce'   => wp_create_nonce( 'wp_rest' ),
-				'api_url'	  => site_url( '/wp-json/wp-reactivate/v1/' ),
+				'api_nonce' => wp_create_nonce( 'wp_rest' ),
+				'api_url'	  => site_url( '/wp-json/gdr-catalog/v1/' ),
 				)
 			);
 		}
@@ -148,8 +148,8 @@ class WPReactivate_Admin {
 		 * Add a settings page for this plugin to the Settings menu.
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'WP Reactivate', $this->plugin_slug ),
-			__( 'WP Reactivate', $this->plugin_slug ),
+			__( 'GDR Catalog', $this->plugin_slug ),
+			__( 'GDR Catalog', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
@@ -162,7 +162,7 @@ class WPReactivate_Admin {
 	 * @since    0.8.0
 	 */
 	public function display_plugin_admin_page() {
-		?><div id="wp-reactivate-admin"></div><?php
+		?><div id="gdr-catalog-admin"></div><?php
 	}
 
 	/**
@@ -185,10 +185,10 @@ class WPReactivate_Admin {
 	 * @since    0.8.0
 	 */
 	public function register_settings() {
-		register_setting( 'general', 'wpreactivate', array(
+		register_setting( 'general', 'gdrcatalog', array(
 			'show_in_rest' 	=> true,
 			'type'			=> 'string',
-			'description'	=> __( 'WP Reactivate Settings', $this->plugin_slug )
+			'description'	=> __( 'GDR Catalog Settings', $this->plugin_slug )
 		) );
 	}
 

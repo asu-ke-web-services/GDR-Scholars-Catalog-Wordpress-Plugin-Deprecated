@@ -24,7 +24,7 @@ class WPReactivate {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'wp-reactivate';
+	protected $plugin_slug = 'gdr-catalog';
 
 	/**
 	 * Instance of this class.
@@ -41,7 +41,7 @@ class WPReactivate {
 	 * @since     0.8.0
 	 */
 	private function __construct() {
-		$this->plugin_version = WP_REACTIVATE_VERSION;
+		$this->plugin_version = GDR_CATALOG_VERSION;
 	}
 
 	/**
@@ -72,7 +72,7 @@ class WPReactivate {
 	 * @since    0.8.0
 	 */
 	public static function activate() {
-		update_option( 'wpreactivate', 'Test Value' );
+		update_option( 'gdrcatalog', 'Test Value' );
 	}
 
 	/**

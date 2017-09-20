@@ -2,22 +2,22 @@
 
 class WPReactivate_REST_Controller {
     /**
-	 * Instance of this class.
-	 *
-	 * @since    0.8.1
-	 *
-	 * @var      object
-	 */
-	protected static $instance = null;
+     * Instance of this class.
+     *
+     * @since    0.8.1
+     *
+     * @var      object
+     */
+    protected static $instance = null;
 
-	/**
-	 * Initialize the plugin by setting localization and loading public scripts
-	 * and styles.
-	 *
-	 * @since     0.8.1
-	 */
-	private function __construct() {
-	}
+    /**
+     * Initialize the plugin by setting localization and loading public scripts
+     * and styles.
+     *
+     * @since     0.8.1
+     */
+    private function __construct() {
+    }
 
     /**
      * Set up WordPress hooks and filters
@@ -28,30 +28,30 @@ class WPReactivate_REST_Controller {
         add_action( 'rest_api_init', array( $this, 'register_routes' ) );
     }
 
-	/**
-	 * Return an instance of this class.
-	 *
-	 * @since     0.8.1
-	 *
-	 * @return    object    A single instance of this class.
-	 */
-	public static function get_instance() {
+    /**
+     * Return an instance of this class.
+     *
+     * @since     0.8.1
+     *
+     * @return    object    A single instance of this class.
+     */
+    public static function get_instance() {
 
-		// If the single instance hasn't been set, set it now.
-		if ( null == self::$instance ) {
-			self::$instance = new self;
-			self::$instance->do_hooks();
-		}
+        // If the single instance hasn't been set, set it now.
+        if ( null == self::$instance ) {
+            self::$instance = new self;
+            self::$instance->do_hooks();
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
     /**
      * Register the routes for the objects of the controller.
      */
     public function register_routes() {
         $version = '1';
-        $namespace = 'wp-reactivate/v' . $version;
+        $namespace = 'gdr-catalog/v' . $version;
 
         register_rest_route( $namespace, '/settings/', array(
             array(
@@ -81,12 +81,12 @@ class WPReactivate_REST_Controller {
      */
     public function get_settings( $request ) {
         $data = array(
-            'wpreactivate' => get_option('wpreactivate'),
+            'gdrcatalog' => get_option('gdrcatalog'),
         );
 
         return new WP_REST_Response( $data, 200 );
     }
-    
+
     /**
      * Update Settings
      *
@@ -94,7 +94,7 @@ class WPReactivate_REST_Controller {
      * @return WP_Error|WP_REST_Request
      */
     public function update_settings( $request ) {
-        update_option('wpreactivate', $request->get_param('wpreactivate'));
+        update_option('gdrcatalog', $request->get_param('gdrcatalog'));
         return new WP_REST_Response( true, 200 );
     }
 
