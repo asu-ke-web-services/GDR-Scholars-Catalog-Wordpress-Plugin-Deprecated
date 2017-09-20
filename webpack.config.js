@@ -28,6 +28,11 @@ const webpackConfig = {
         test: /\.css$/,
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: /(node_modules)/,
+        loader  : 'url-loader?limit=30000'
       }
     ],
   },

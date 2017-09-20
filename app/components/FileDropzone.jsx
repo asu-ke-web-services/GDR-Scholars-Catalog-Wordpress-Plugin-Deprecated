@@ -4,6 +4,8 @@ import axios from "axios";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
 
+import dropzoneImage from '../images/dropzone.png';
+
 const DropzoneClickable = styled((Dropzone: any))`
   cursor: pointer;
   background: rgba(0, 0, 0, 0.02);
@@ -19,16 +21,16 @@ const DropzoneClickable = styled((Dropzone: any))`
 `;
 const DropzoneMessages = styled.div`
   cursor: pointer;
-  background-image: url(spritemap@2x.png);
-  background-size: 428px 406px;
+  background-image: url(${dropzoneImage});
+  background-size: 422px 93px;
   opacity: 1;
   filter: none;
   transition: opacity 0.3s ease-in-out;
   background-repeat: no-repeat;
   background-position: 0 0;
   position: absolute;
-  width: 428px;
-  height: 123px;
+  width: 422px;
+  height: 93px;
   margin-left: -214px;
   margin-top: -61.5px;
   top: 50%;
