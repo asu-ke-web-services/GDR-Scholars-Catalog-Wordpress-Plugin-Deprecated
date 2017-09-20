@@ -7,7 +7,7 @@ The GDR Scholars Catalog WordPress Plugin enables the GDR Catalog, a React.JS fr
 * [GitHub Updater WordPress Plugin](https://github.com/afragen/github-updater)
 
 ## Setup and installation
-* Download and install the [latest release package]().
+* Download and install the [latest named release package](https://github.com/gios-asu/GDR-Scholars-Catalog-Wordpress-Plugin/releases/latest) (GDR-Scholars-Catalog-Wordpress-Plugin-xxx.tar).
 * Activate the plugin in the WP Plugins Admin screen.
 * Insert shortcode, [gdr-catalog], into page content area
 * The "Full Width" page template is recommended for this application.
