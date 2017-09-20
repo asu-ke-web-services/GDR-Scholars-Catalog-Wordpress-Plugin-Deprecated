@@ -1,22 +1,22 @@
 <?php
 /**
- * WP-Reactivate
+ * GDR Scholars Catalog
  *
  *
- * @package   WP-Reactivate
- * @author    Pangolin
+ * @package   gdrscholars-catalog
+ * @author    Nathan Rollins
  * @license   GPL-3.0
- * @link      https://gopangolin.com
- * @copyright 2017 Pangolin (Pty) Ltd
+ * @link      https://sustainability.asu.edu
+ * @copyright 2017 Julie Ann Wrigley Global Institute of Sustainability
  *
  * @wordpress-plugin
- * Plugin Name:       WP-Reactivate
- * Plugin URI:        https://gopangolin.com
- * Description:       React boilerplate for WordPress plugins
- * Version:           0.8.1
- * Author:            pangolin
- * Author URI:        https://gopangolin.com
- * Text Domain:       wp-reactivate
+ * Plugin Name:       GDR-Scholars-Catalog
+ * Plugin URI:        https://sustainability.asu.edu
+ * Description:       WP plugin to deploy the ReactJS application for the GDR Catalog
+ * Version:           0.1.0
+ * Author:            Julie Ann Wrigley Global Institute of Sustainability
+ * Author URI:        https://sustainability.asu.edu
+ * Text Domain:       gdrscholars-catalog
  * License:           GPL-3.0
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
  * Domain Path:       /languages
@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'WP_REACTIVATE_VERSION', '0.8.1' );
+define( 'GDR_CATALOG_VERSION', '0.1.0' );
 
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-wpr.php' );
@@ -41,7 +41,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/class-wpr-rest-controller.
  *
  * @since 0.8.0
  */
-function wp_reactivate_init() {
+function gdr_catalog_init() {
 	$wpr = WPReactivate::get_instance();
 	$wpr_shortcode = WPReactivate_Shortcode::get_instance();
 	$wpr_admin = WPReactivate_Admin::get_instance();
@@ -57,7 +57,7 @@ add_action( 'plugins_loaded', 'wp_reactivate_init' );
 function wp_reactivate_widget() {
 	register_widget( 'WPR_Widget' );
 }
-add_action( 'widgets_init', 'wp_reactivate_widget' );
+add_action( 'plugins_loaded', 'gdr_catalog_init' );
 
 /**
  * Register activation and deactivation hooks
