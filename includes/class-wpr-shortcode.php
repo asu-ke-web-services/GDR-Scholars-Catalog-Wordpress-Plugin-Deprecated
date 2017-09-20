@@ -80,10 +80,12 @@ class WPReactivate_Shortcode {
 		wp_enqueue_script( $this->plugin_slug . '-shortcode-script' );
 		wp_enqueue_style( $this->plugin_slug . '-shortcode-style' );
 
+		$gdrscholars_api_url = getenv('REACT_APP_API_URI', true) ?: getenv('REACT_APP_API_URI');
+		$gdrscholars_base_url = getenv('REACT_APP_BASE_URI', true) ?: getenv('REACT_APP_BASE_URI');
+
 		$object = shortcode_atts( array(
-			'gdrscholars_api_url' => 'https://gdrscholars.api.dev.gios.asu.edu/api/v1',
-			// 'gdrscholars_base_url' => '/degrees-and-programs/graduate-degrees-programs/usaid-ri-fellowships/catalog/',
-			'gdrscholars_base_url' => '/graduate-degrees-programs/usaid-ri-fellowships/catalog/',
+			'gdrscholars_api_url' => $gdrscholars_api_url,
+			'gdrscholars_base_url' => $gdrscholars_base_url,
 			// 'api_nonce'   => wp_create_nonce( 'wp_rest' ),
 			// 'api_url'	  => site_url( '/wp-json/gdr-catalog/v1/' ),
 		), $atts, 'gdr-catalog' );
