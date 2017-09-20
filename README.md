@@ -1,23 +1,38 @@
-![alt-text](https://cloud.githubusercontent.com/assets/1805604/26199709/55c91bda-3bcb-11e7-871e-94b7a022cfa9.jpg "WP Reactivate - WordPress React Boilerplate")
-# WP Reactivate
-WP Reactivate is a React boilerplate built specifically for WordPress, allowing you to quickly and easily integrate React into your WordPress plugins.
+
+# GDR-Scholars-Catalog-WordPress-Plugin
+The GDR Scholars Catalog WordPress Plugin enables the GDR Catalog, a React.JS frontend application for the [ASU-USAID Fellowships program](https://schoolofsustainability.asu.edu/degrees-and-programs/graduate-degrees-programs/usaid-ri-fellowships/), to be deployed within a WordPress site via a shortcode.
+
+# Requirements
+* php > 5.5
+* [GitHub Updater WordPress Plugin](https://github.com/afragen/github-updater)
 
 ## Setup and installation
+* Download and install the [latest release package]().
+* Activate the plugin in the WP Plugins Admin screen.
+* Insert shortcode, [gdr-catalog], into page content area
+* The "Full Width" page template is recommended for this application.
+
+
+
+## Setup for Development
 * **Install [Node 4.0.0 or greater](https://nodejs.org)**
 * **Install [Yarn](https://yarnpkg.com/en/docs/install)** (Or use npm if you prefer)
 
-## Usage
+## Development Usage
 * Install required modules: `yarn` (or `npm install`)
 * Build development version of app and watch for changes: `yarn build` (or `npm run build`)
 * Build production version of app:`yarn prod` (or `npm run prod`)
 
 ## Quick Start
 ### Introduction
-This boilerplate plugin provides three different WordPress views in which an independant React app can be rendered:
+This plugin is based on the boilerplate plugin code from [WP-Reactivate](https://github.com/gopangolin/wp-reactivate). WP-Reactivate provides three different WordPress views in which an independant React app can be rendered:
 
 - Shortcode
 - Widget
 - Settings page in the backend (wp-admin)
+
+**NOTE: GDR-Scholars-Catalog-Wordpress-Plugin has disabled or removed unused portions of these views. Only the Shortcode view is currently in use.**
+
 
 Each JavaScript root file will correspond to the independant React app to be bundled by Webpack.
 
@@ -29,7 +44,7 @@ entry: {
   'js/widget': path.resolve(__dirname, 'app/widget.js'),
 },
 ```
-  
+
 ### Using the Shortcode
 In order to get the shortcode attributes into our Javascript we need to pass them to an object which will be made available to the *shortcode.js* app via ```wp_localize_script```. Be careful with the security of data you pass here as this will be output in a ```<script>``` tag in the rendered html.
 
@@ -41,17 +56,17 @@ public function shortcode( $atts ) {
 
   $object = shortcode_atts( array(
     'title'       => 'Hello world',
-  ), $atts, 'wp-reactivate' );
+  ), $atts, 'gdr-catalog' );
 
   wp_localize_script( $this->plugin_slug . '-shortcode-script', 'wpr_object', $object );
 
-  ?><div id="wp-reactivate-shortcode"></div><?php
+  ?><div id="gdr-catalog-shortcode"></div><?php
 }
 ```
 
 You can access the shortcode attributes via the ```wpr_object``` in your React container component.
 
-*app/containers/Shortcode.jsx* 
+*app/containers/Shortcode.jsx*
 ```javascript =1
 import React, { Component } from 'react';
 
@@ -66,46 +81,7 @@ export default class Shortcode extends Component {
   }
 }
 ```
-### Using the Widget
-In order to get the widget options into our Javascript we need to pass them to an object which will be made available to the *widget.js* app via ```wp_localize_script```. Be careful with the security of data you pass here as this will be output in a ```<script>``` tag in the rendered html.
 
-
-*includes/class-wpr-widget.php*
-```php =41
-public function widget( $args, $instance ) {
-  wp_enqueue_script( $this->plugin_slug . '-widget-script', plugins_url( 'assets/js/widget.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->version );
-
-  $object = array(
-    'title'       => $instance['title'],
-  );
-
-  wp_localize_script( $this->plugin_slug . '-widget-script', 'wpr_object', $object );
-
-  echo $args['before_widget'];
-
-  ?><div id="wp-reactivate-widget"></div><?php
-
-  echo $args['after_widget'];
-}
-```
-You can access the widget options via the ```wpr_object``` in your React container component.
-
-*app/containers/Widget.jsx* 
-```javascript =1
-import React, { Component } from 'react';
-
-export default class Widget extends Component {
-  render() {
-    return (
-      <div className="wrap">
-        <h1>WP Reactivate Widget</h1>
-        <p>Title: {wpr_object.title}</p>
-      </div>
-    );
-  }
-}
-
-```
 ### Using the Settings Page
 In our admin class we add a sub menu page to the Settings menu using ```add_options_page``` and register a setting to be used on the page.
 
@@ -153,4 +129,4 @@ getSetting = () => {
 | [ESLint](http://eslint.org/)| Pluggable linting utility for JavaScript and JSX  |
 
 ## Credits
-*Made by [Pangolin](https://gopangolin.com)*
+*WP-Reactivate boilerplate made by [Pangolin](https://gopangolin.com)*
