@@ -29,6 +29,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'GDR_CATALOG_VERSION', '0.1.2' );
 
+// Load custom settings for application
+require_once( plugin_dir_path( __FILE__ ) . 'localsettings.php' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-wpr.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-wpr-shortcode.php' );
