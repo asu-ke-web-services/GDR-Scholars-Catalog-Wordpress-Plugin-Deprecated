@@ -34,7 +34,10 @@ function Catalog(props: { posts: array, loading: boolean }) {
       Header: "Expand",
       expander: true,
       width: 75,
-
+      Expander: ({ isExpanded, ...rest }) =>
+        <div>
+          {isExpanded ? <span>&#x2299;</span> : <span>&#x2295;</span>}
+        </div>,
       style: {
         cursor: "pointer",
         fontSize: 25,
