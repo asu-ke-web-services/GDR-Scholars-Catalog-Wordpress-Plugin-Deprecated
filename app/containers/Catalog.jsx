@@ -7,7 +7,7 @@ import CatalogTable from "../components/CatalogTable";
 function Catalog(props: { posts: array, loading: boolean }) {
   const tableOptions = {
     loading: props.loading,
-    defaultPageSize: 20,
+    defaultPageSize: `${wpr_object.gdr_default_page_size}`,
     showPagination: true,
     showPageSizeOptions: true,
     pageSizeOptions: [10, 20, 50, 100],

@@ -82,10 +82,12 @@ class WPReactivate_Shortcode {
 
 		$gdr_api_url = GDR_API_URI;
 		$gdr_base_url = GDR_APP_BASE_URI;
+		$gdr_default_page_size = GDR_DEFAULT_PAGE_SIZE;
 
 		$object = shortcode_atts( array(
 			'gdr_api_url' => $gdr_api_url,
 			'gdr_base_url' => $gdr_base_url,
+			'gdr_default_page_size' => $gdr_default_page_size,
 			// 'api_nonce'   => wp_create_nonce( 'wp_rest' ),
 			// 'api_url'	  => site_url( '/wp-json/gdr-catalog/v1/' ),
 		), $atts, 'gdr-catalog' );
