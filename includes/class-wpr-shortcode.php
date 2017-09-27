@@ -80,12 +80,12 @@ class WPReactivate_Shortcode {
 		wp_enqueue_script( $this->plugin_slug . '-shortcode-script' );
 		wp_enqueue_style( $this->plugin_slug . '-shortcode-style' );
 
-		$gdrscholars_api_url = GDR_API_URI;
-		$gdrscholars_base_url = GDR_APP_BASE_URI;
+		$gdr_api_url = GDR_API_URI;
+		$gdr_base_url = GDR_APP_BASE_URI;
 
 		$object = shortcode_atts( array(
-			'gdrscholars_api_url' => $gdrscholars_api_url,
-			'gdrscholars_base_url' => $gdrscholars_base_url,
+			'gdr_api_url' => $gdr_api_url,
+			'gdr_base_url' => $gdr_base_url,
 			// 'api_nonce'   => wp_create_nonce( 'wp_rest' ),
 			// 'api_url'	  => site_url( '/wp-json/gdr-catalog/v1/' ),
 		), $atts, 'gdr-catalog' );

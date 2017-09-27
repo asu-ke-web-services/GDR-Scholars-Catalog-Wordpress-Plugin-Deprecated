@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const apiServer = `${wpr_object.gdrscholars_api_url}/opportunities`;
+    const apiServer = `${wpr_object.gdr_api_url}/opportunities`;
 
     axios
       .get(apiServer)
@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename={wpr_object.gdrscholars_base_url}>
+      <BrowserRouter basename={wpr_object.gdr_base_url}>
         <div className="App">
           <Switch>
             <Route

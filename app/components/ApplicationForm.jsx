@@ -59,7 +59,7 @@ class ApplicationFormComponent extends Component {
     data.append("applicantStatement", applicantStatement);
     data.append("fileUpload", fileUpload);
 
-    const apiEndpoint = `${wpr_object.gdrscholars_api_url}/opportunities/apply`;
+    const apiEndpoint = `${wpr_object.gdr_api_url}/opportunities/apply`;
     axios
       .post(apiEndpoint, data)
       .then(result => {

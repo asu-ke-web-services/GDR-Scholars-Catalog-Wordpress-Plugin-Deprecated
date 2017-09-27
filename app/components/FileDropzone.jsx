@@ -51,7 +51,7 @@ export default class FileDropzone extends Component {
     const data = new FormData();
     data.append("fileUpload", files[0]);
 
-    const apiEndpoint = `${wpr_object.gdrscholars_api_url}/uploads/submit`;
+    const apiEndpoint = `${wpr_object.gdr_api_url}/uploads/submit`;
     axios.post(apiEndpoint, data).then(
       response => {
         // eslint-disable-next-line
