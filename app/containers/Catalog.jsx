@@ -10,7 +10,7 @@ function Catalog(props: { posts: array, loading: boolean }) {
     defaultPageSize: `${wpr_object.gdr_default_page_size}`,
     showPagination: true,
     showPageSizeOptions: true,
-    pageSizeOptions: [10, 20, 50, 100],
+    pageSizeOptions: [20, 50, 100],
     showPageJump: true,
     collapseOnSortingChange: true,
     collapseOnPageChange: true,
