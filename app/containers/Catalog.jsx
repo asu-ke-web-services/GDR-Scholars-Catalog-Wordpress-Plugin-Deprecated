@@ -40,7 +40,7 @@ function Catalog(props: { posts: array, loading: boolean }) {
         </div>,
       style: {
         cursor: "pointer",
-        fontSize: 25,
+        fontSize: 22,
         padding: "0",
         textAlign: "center",
         userSelect: "none"
@@ -49,15 +49,24 @@ function Catalog(props: { posts: array, loading: boolean }) {
     {
       Header: "Title",
       accessor: "title",
-      minWidth: 300
+      minWidth: 300,
+      style: {
+        fontSize: 16
+      }
     },
     {
       Header: "Country",
-      accessor: "country"
+      accessor: "country",
+      style: {
+        fontSize: 16
+      }
     },
     {
       Header: "Discipline",
-      accessor: "discipline"
+      accessor: "discipline",
+      style: {
+        fontSize: 16
+      }
     }
   ];
 
